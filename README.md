@@ -19,9 +19,9 @@ You don't want it running with no antenna. **Do not ever run a LORA radio of any
 
 ## Unplug the microSD/EEMC from the compute module
 All the units we've seen have shipped with Raspberry Pi CM3 or CM3lite and utilize the microSD card socket on the daughtercard. 
-* Look for the **EEMC* card plugged into the CM daughtercard. The CM3 is typically green and has Raspberry lettering on it. The microSD card is on the board below that, and normally extends over the network RJ45 socket.
+* Look for the **EEMC* card plugged into the CM daughtercard. The CM3 is typically green and has Raspberry lettering on it. The microSD card is on the board below that, and normally extends over the network RJ45 socket. In the photo below it is the module with the yellow dot. 
 
-*Todo: add image of the microSD/EEMC card*
+<img src="assets/images/microsd_eemc.jpg" alt="microsd eemc module" style="width:50%; height:auto;">
 
 ## Burn the desired image to the microSD/EEMC card
 We recommend bringing it up on Balena-cloud free tier to run meshtasticd & meshtastic. To do so, follow the steps in (https://github.com/pinztrek/balena-meshtasticd). 
@@ -44,9 +44,9 @@ Instead, install a supported radio. If you are trying to source one, it is stron
 ### USB devices
 USB Devices should work once plugged into one of the sockets on the USB hub daughtercard near the network. 
 
-Meshtoad & Meshtadpole type devices have been reported to work
+Meshtoad & Meshtadpole type devices have been reported to work. The photo below shows the bluetooth module which can be removed and the jack unilized. 
 
-*Todo: Document exactly where to plug in and which daughtercard*
+<img src="assets/images/usb_hub.jpg" alt="usb hub" style="width:50%; height:auto;">
 
 ### SPI devices like the Waveshare or similar
 At least one user (Matt Smith) has a waveshare card working, and more are trying them. 
@@ -55,9 +55,14 @@ This will require soldering of 4 bodge wires as Nebra did not run all the PI I/O
 
 * Carefully remove the CM module by disengaging the metal clips
 * Carefully unplug the CM daughtercard by lifting it. You may have to gently squeeze the white nylon mounting pin sticking through the hole in the board.
-* *Todo: Add exact steps and pics here to detach the other boards*
+* Remove the USB Hub daughtercard from the pi 40 pin jumper. You can disconnect/remove any attached usb devices as the waveshare will replace this daughtercard unless it's equipped with a stackable header.
+<img src="assets/images/usb_hub_unplugged.jpg" alt="USB hub unplugged" style="width:50%; height:auto;">
+* Carefully unplug all wires from the mainboard, remove any screws and unclip any plastic retainers
+<img src="assets/images/nebra_main_bd.jpg" alt="Nebra main board" style="width:50%; height:auto;">
 * Carefully prepare and solder 4 small wires as per the pictures and diagram below. A piece of ethernet cat 3/5 cable is an ideal source of small wires. **Visually confirm no pins are shorted!!!!**
-* Plug the Waveshare or similar board into Pi pins *Todo: Need picture and exact description*
+<img src="assets/images/pi_40_diagram.jpg" alt="Nebra 40 pin pi connector diagram for missing wires" style="width:50%; height:auto;">
+<img src="assets/images/pi_40_wires.jpg" alt="Nebra 40 pin pi bodge wires" style="width:50%; height:auto;">
+* Plug the Waveshare or similar board into Pi pins paying attention to pin 1, etc.  *Todo: Need picture and exact description*
 
 ## Select and configure the appropriate radio in the software
 If using *balena-meshtasticd* follow the instructions on setting ENV variables and configuring the radio at: (https://github.com/pinztrek/balena-meshtasticd)
