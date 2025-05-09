@@ -11,6 +11,7 @@ But you can get the unit running with an OS and meshtasticd quickly.
 ## Open the unit and confirm the daughter cards are plugged in
 Often the USB/network daughter card has come loose. Occasionally the CM3 daughter card does as well. 
 ![USB hub unplugged](assets/images/usb_hub_unplugged.jpg "USB hub unplugged")
+<img src="assets/images/usb_hub_unplugged.jpg" width="300" height="300">
 ## Unplug the LORAWAN Concentrator
 You don't want it running with no antenna. **Do not ever run a LORA radio of any type without an antenna connected!**
 * The LORA module is near the bottom of the unit and labeled *LORA Module 1*. Gently undo the little metal clips, and the radio module will unplug. Set it aside, you may want to use it for a LORAWAN setup down the road.
