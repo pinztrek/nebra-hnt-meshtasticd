@@ -23,7 +23,7 @@ All the units we've seen have shipped with Raspberry Pi CM3 or CM3lite and utili
 
 ## Burn the desired image to the microSD/EEMC card
 We recommend bringing it up on Balena-cloud free tier to run meshtasticd & meshtastic. To do so, follow the steps in (https://github.com/pinztrek/balena-meshtasticd). 
-[![balena deploy button](https://www.balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/pinztrek/balena-meshtasticd) 
+This uses the click to deploy [![balena deploy button](https://www.balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/pinztrek/balena-meshtasticd) (https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/pinztrek/balena-meshtasticd) approach. 
 
 This handles all the docker and OS config, and results in a usable meshtasticd appliance once you install a supported radio module. 
 
