@@ -44,12 +44,12 @@ Instead, install a supported radio. If you are trying to source one, it is stron
 ### USB devices
 USB Devices should work once plugged into one of the sockets on the USB hub daughtercard near the network. 
 
-Meshtoad & Meshtadpole type devices have been reported to work. The photo below shows the bluetooth module which can be removed and the jack unilized. 
+Meshtoad & Meshtadpole type devices have been reported to work. The photo below shows the bluetooth module which can be unplugged from the usb hub and the jack unilized. 
 
 <img src="assets/images/usb_hub.jpg" alt="usb hub" style="width:50%; height:auto;">
 
 ### SPI devices like the Waveshare or similar
-At least one user (Matt Smith) has a waveshare card working, and more are trying them. 
+Matt Smith figured out how to get a waveshare card working, and more are trying them. 
 
 This will require soldering of 4 bodge wires as Nebra did not run all the PI I/O pins over to the daughtercard. 
 
@@ -68,3 +68,25 @@ This will require soldering of 4 bodge wires as Nebra did not run all the PI I/O
 If using *balena-meshtasticd* follow the instructions on setting ENV variables and configuring the radio at: (https://github.com/pinztrek/balena-meshtasticd)
 
 If using other software configure as needed. 
+
+## Enabling the built in GPS module
+Austin (/vid) sorted how to access the built in u-blox gps module. It requires a kernel param:
+*dtoverlay=uart1,txd1_pin=32,rxd1_pin=33,pin_func=7*
+For raspian or similar edit */boot/firmware/config.txt* and add the following:
+*enable_uart=1
+dtoverlay=uart1,txd1_pin=32,rxd1_pin=33,pin_func=7*
+
+The gps should become available on */dev/serial1* or similar.
+
+For ##balena-meshtasticd## this is done via config variables on the device configuration page. 
+enable UART
+and in the advanced config section add ##BALENA_HOST_CONFIG_dtoverlay## and set it to *uart1,txd1_pin=32,rxd1_pin=33,pin_func=7*
+You can also hand edit the config.txt file in balena, but the env variables accomplish the same. 
+
+Austin recommends gpsd to test the gps. You can also read the NMEA data via the following command: cat < /dev/ttyS0 (replace with your device)
+
+For ##balena-meshtasticd## you can enable the gps by setting ##GPS##=*nebra*. The device is /dev/ttyS0
+
+##GPS Note 1:## the gps may take many hours to find satelites and download ephmersis data. Especially if an external antenna is not connected and you are indoors. 
+
+##GPS Note 2:## The u-blox built in gps module has not been confirmed to work with meshtasticd. But since gpsd can access it and it's decoding NMEA data, it should be able to work. 
