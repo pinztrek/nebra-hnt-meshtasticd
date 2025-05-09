@@ -64,7 +64,7 @@ This will require soldering of 4 bodge wires as Nebra did not run all the PI I/O
 <img src="assets/images/nebra_main_bd.jpg" alt="Nebra main board" style="width:50%; height:auto;">
 
 * Carefully prepare and solder 4 small wires as per the pictures and diagram below. A piece of ethernet cat 3/5 cable is an ideal source of small wires. **Visually confirm no pins are shorted!!!!**
-<img src="assets/images/pi_40_diagram.jpg" alt="Nebra 40 pin pi connector diagram for missing wires" style="width:50%; height:auto;">
+<img src="assets/images/pi_40_diagram.png" alt="Nebra 40 pin pi connector diagram for missing wires" style="width:50%; height:auto;">
 <img src="assets/images/pi_40_wires.jpg" alt="Nebra 40 pin pi bodge wires" style="width:50%; height:auto;">
 
 * Plug the Waveshare or similar board into Pi pins paying attention to pin 1, etc.  *Todo: Need picture and exact description*
