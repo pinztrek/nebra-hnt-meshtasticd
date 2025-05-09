@@ -42,11 +42,17 @@ The LORAWAN concentrator the units ship with are not supported by meshtastic. Re
 Instead, install a supported radio. If you are trying to source one, it is strongly recommended to use one supported and listed at the meshtastic firmware site (https://github.com/meshtastic/firmware/bin/config.d).
 
 ### USB devices
-USB Devices should work once plugged into one of the sockets on the USB hub daughtercard near the network. 
+USB Devices should work once plugged into one of the sockets on the USB hub daughtercard near the network. This is probably the easiest route if you do not already have a device. 
 
-Meshtoad & Meshtadpole type devices have been reported to work. The photo below shows the bluetooth module which can be unplugged from the usb hub and the jack unilized. 
+Meshtoad & Meshtadpole type devices are known to work. The photo below shows the bluetooth module which can be unplugged from the usb hub and the jack utilized. 
 
 <img src="assets/images/usb_hub.jpg" alt="usb hub" style="width:50%; height:auto;">
+
+Here's a meshtoad working in the Nebra-HNT:
+
+<img src="assets/images/meshtoad.jpg" alt="meshtoad in nebra" style="width:50%; height:auto;">
+
+Contact Walt Hooper or Austin (/vid) for specifics. 
 
 ### SPI devices like the Waveshare or similar
 Matt Smith figured out how to get a waveshare card working, and more are trying them. 
@@ -66,6 +72,8 @@ This will require soldering of 4 bodge wires as Nebra did not run all the PI I/O
 * Carefully prepare and solder 4 small wires as per the pictures and diagram below. A piece of ethernet cat 3/5 cable is an ideal source of small wires. **Visually confirm no pins are shorted!!!!**
 <img src="assets/images/pi_40_diagram.png" alt="Nebra 40 pin pi connector diagram for missing wires" style="width:50%; height:auto;">
 <img src="assets/images/pi_40_wires.jpg" alt="Nebra 40 pin pi bodge wires" style="width:50%; height:auto;">
+
+* Walt Hooper indicates a wire for GPIO13 is also needed for many hats. *Todo: document pins*  
 
 * Plug the Waveshare or similar board into Pi pins paying attention to pin 1, etc.  *Todo: Need picture and exact description*
 
