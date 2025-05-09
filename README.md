@@ -10,12 +10,12 @@ But you can get the unit running with an OS and meshtasticd quickly.
 # Initial steps
 ## Open the unit and confirm the daughter cards are plugged in
 Often the USB/network daughter card has come loose. Occasionally the CM3 daughter card does as well. 
-![USB hub unplugged](assets/images/usb_hub_unplugged.jpg "USB hub unplugged")
-<img src="assets/images/usb_hub_unplugged.jpg" width="300" height="300">
+<img src="assets/images/usb_hub_unplugged.jpg" alt="USB hub unplugged" style="width:50%; height:auto;">
 ## Unplug the LORAWAN Concentrator
 You don't want it running with no antenna. **Do not ever run a LORA radio of any type without an antenna connected!**
-* The LORA module is near the bottom of the unit and labeled *LORA Module 1*. Gently undo the little metal clips, and the radio module will unplug. Set it aside, you may want to use it for a LORAWAN setup down the road.
-* *Todo: Add photo of concentrator*
+* The LORA module is near the bottom of the unit and labeled *LORA Module 1*. Gently undo the little metal clips, and the radio module will unplug. Carefully disconnect the antenna and tuck the coax under the mainboard. Set it aside, you may want to use it for a LORAWAN setup down the road.
+<img src="assets/images/lora_module_clips.jpg" alt="lora module clips" style="width:50%; height:auto;">
+<img src="assets/images/lora_module_antenna.jpg" alt="lora module antenna" style="width:50%; height:auto;">
 
 ## Unplug the microSD/EEMC from the compute module
 All the units we've seen have shipped with Raspberry Pi CM3 or CM3lite and utilize the microSD card socket on the daughtercard. 
