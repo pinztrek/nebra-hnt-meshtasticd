@@ -80,8 +80,8 @@ dtoverlay=uart1,txd1_pin=32,rxd1_pin=33,pin_func=7*
 The gps should become available on */dev/serial1* or similar.
 
 For **balena-meshtasticd** this is done via config variables on the device configuration page. 
-enable UART
-and in the advanced config section add **BALENA_HOST_CONFIG_dtoverlay** and set it to *uart1,txd1_pin=32,rxd1_pin=33,pin_func=7*
+* Set Enable/Disable UART
+* in the advanced config section add **BALENA_HOST_CONFIG_dtoverlay** and set it to *uart1,txd1_pin=32,rxd1_pin=33,pin_func=7*
 
 You can also hand edit the balena *config.txt* file in balena, but the env variables accomplish the same. 
 
