@@ -100,7 +100,7 @@ You can also hand edit the balena *config.txt* file in balena, but the env varia
 
 If using **balena-meshtasticd** you can test the gps with *gpsmon /dev/ttyS0* in the terminal window (Use your specific serial device file). You can also read the NMEA data via the following command: *cat < /dev/ttyS0* (replace with your device)
 
-For **balena-meshtasticd** you can enable the gps by setting **GPS**=*nebra*. The device is /dev/ttyS0
+For **balena-meshtasticd** you can enable the gps by setting **GPS**=*nebra*. The device is normally */dev/ttyS0*
 
 * **GPS Note 1:** the gps may take many hours to find satelites and download ephmersis data.
 
@@ -108,10 +108,15 @@ For **balena-meshtasticd** you can enable the gps by setting **GPS**=*nebra*. Th
 ** You can use the wifi jumper on the nebra for the GPS with the addition of a couple of jumpers and adapters:<p>
   [**RP-SMA Female to UFL Male jumper**](https://www.amazon.com/dp/B0CS6KBDJJ) This connects the old wifi jumper to the GPS module on the mainboard<p>
   [**SMA-F to N Male adapter**](https://www.amazon.com/gp/product/B0BGS9N6RC) Allows you to use the commonly available GPS antennas with SMA-male connectors on the 2nd N connector on the Nebra for the wifi antenna. <p>
-  [**Garmin type GPS antenna with SMA male](https://www.amazon.com/gp/product/B0CZ3VKGSP) There are many GPS antennas on amazon which will work. I've used several. This one is one of the least expensive. 
+  [**Garmin type GPS antenna with SMA male**](https://www.amazon.com/gp/product/B0CZ3VKGSP) There are many GPS antennas on amazon which will work. I've used several. This one is one of the least expensive.
+
+In addition to the delay in locating satelites, sometimes a power cycle is needed to get the u-blox module to recognize that it has an external antenna attached and start using it. 
  
 * **GPS Note 3:** The radio will typically need to have GPS mode enabled under the position section of the configuration. Normally done using the *meshtastic CLI*.<p>
-*todo: insert CLI commands*
+*meshtastic --set position.gps_mode 1*
+
+If you have setup remote admin on your nebra you can also enable it that way. You can enable remote admin by adding the public key of the device you want to admin from into the nebra. The command you'd run is:
+*meshtastic --set security.adminKey 'base64:insert_your_public_key'* Quotes and case matter!
 
 
 
