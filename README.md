@@ -106,11 +106,12 @@ For **balena-meshtasticd** you can enable the gps by setting **GPS**=*nebra*. Th
 
 * **GPS Note 2:** The u-blox built in gps module will require a Garmin type external active antenna. These are quite common on Amazon, etc. 
 ** You can use the wifi jumper on the nebra for the GPS with the addition of a couple of jumpers and adapters:<p>
-  **RP-SMA Female to UFL Male jumper** This connects the old wifi jumper to the GPS module on the mainboard<p>
-  **SMA-F to N Male adapter** Allows you to use the commonly available GPS antennas with SMA-male connectors
+  [**RP-SMA Female to UFL Male jumper**](https://www.amazon.com/dp/B0CS6KBDJJ) This connects the old wifi jumper to the GPS module on the mainboard<p>
+  [**SMA-F to N Male adapter**](https://www.amazon.com/gp/product/B0BGS9N6RC) Allows you to use the commonly available GPS antennas with SMA-male connectors on the 2nd N connector on the Nebra for the wifi antenna. <p>
+  [**Garmin type GPS antenna with SMA male](https://www.amazon.com/gp/product/B0CZ3VKGSP) There are many GPS antennas on amazon which will work. I've used several. This one is one of the least expensive. 
  
 * **GPS Note 3:** The radio will typically need to have GPS mode enabled under the position section of the configuration. Normally done using the *meshtastic CLI*.<p>
 *todo: insert CLI commands*
 
-* All the items needed to get the GPS active are available on Amazon:
-** *todo: Insert amazon links*
+
+
