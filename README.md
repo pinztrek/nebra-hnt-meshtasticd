@@ -98,17 +98,17 @@ For **balena-meshtasticd** this is done via config variables on the device confi
 
 You can also hand edit the balena *config.txt* file in balena, but the env variables accomplish the same. 
 
-If using **balena-meshtasticd** you cane test the gps with *gpsmon /dev/ttyS0* in the terminal window (Use your specific serial device file). You can also read the NMEA data via the following command: cat < /dev/ttyS0 (replace with your device)
+If using **balena-meshtasticd** you can test the gps with *gpsmon /dev/ttyS0* in the terminal window (Use your specific serial device file). You can also read the NMEA data via the following command: *cat < /dev/ttyS0* (replace with your device)
 
 For **balena-meshtasticd** you can enable the gps by setting **GPS**=*nebra*. The device is /dev/ttyS0
 
 * **GPS Note 1:** the gps may take many hours to find satelites and download ephmersis data.
 
-* **GPS Note 2:** The u-blox built in gps module will require a Garmin type external active antenna. These are quite common on Amazon, etc.
+* **GPS Note 2:** The u-blox built in gps module will require a Garmin type external active antenna. These are quite common on Amazon, etc. 
 ** You can use the wifi jumper on the nebra for the GPS with the addition of a couple of jumpers and adapters:
   *** **RP-SMA Female to UFL Male jumper** This connects the old wifi jumper to the GPS module on the mainboard
   *** **SMA-F to N Male adapter** Allows you to use the commonly available GPS antennas with SMA-male connectors
-* **GPS Note 3:** The radio will need to have GPS mode enabled under the position section of the configuration. Normally done using the *meshtastic CLI*.<p>
+* **GPS Note 3:** The radio will typically need to have GPS mode enabled under the position section of the configuration. Normally done using the *meshtastic CLI*.<p>
 *todo: insert CLI commands*
 
 * All the items needed to get the GPS active are available on Amazon:
