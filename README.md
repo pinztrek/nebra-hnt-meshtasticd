@@ -32,6 +32,11 @@ This handles all the docker and OS config, and results in a usable meshtasticd a
 Of course if you want to roll your own use the image of your choice for the pi. But we strongly recommend giving the click and run 
 (balena-meshtasticd)(https://github.com/pinztrek/balena-meshtasticd) approach a try to confirm your unit HW is working quickly. 
 
+**balena-meshtasticd** allows for almost a no-edit standup of a docker based nebra device. all you need to do is:
+* Set balena env variable **NEBRA** *=1* to enable Nebra specific settings
+* You'll also need to set a device. **MESHTOAD** *=1* or similar (See **balena-meshtasticd** documentation for specifics)
+
+**Back to burning the image:**
 * Use balena etcher to burn the image onto the card
 * Note that some newer USB 3.0 microSD reader sticks will not work, but older ones will. If you do not see files on the original microSD when plugged in this is impacting you.
 * Note that it is normal for several volumes to appear and windows file manager to warn/error as there are several partitions on the original images. 
@@ -100,7 +105,7 @@ You can also hand edit the balena *config.txt* file in balena, but the env varia
 
 If using **balena-meshtasticd** you can test the gps with *gpsmon /dev/ttyS0* in the terminal window (Use your specific serial device file). You can also read the NMEA data via the following command: *cat < /dev/ttyS0* (replace with your device)
 
-For **balena-meshtasticd** you can enable the gps by setting **GPS**=*nebra*. The device is normally */dev/ttyS0*
+See also the **NEBRA**=1 variable above which sets many defaults if using **balena-meshtasticd**.
 
 * **GPS Note 1:** the gps may take many hours to find satelites and download ephmersis data.
 
